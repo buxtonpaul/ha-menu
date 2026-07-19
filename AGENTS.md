@@ -4,7 +4,7 @@
 
 ### Issue tracker
 
-Issues and specs are tracked locally as Markdown files under `.scratch/`. See `docs/agents/issue-tracker.md`.
+Issues are now managed on GitHub directly at [buxtonpaul/ha-menu](https://github.com/buxtonpaul/ha-menu/issues).
 
 ### Domain docs
 
