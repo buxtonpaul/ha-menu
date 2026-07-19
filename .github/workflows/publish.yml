@@ -45,8 +45,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tagName: ${{ github.ref_type == 'tag' && github.ref_name || format('v0.1.0-draft.{0}', github.run_number) }}
-          releaseName: 'HA Menu ${{ github.ref_type == 'tag' && github.ref_name || format('Draft {0}', github.run_number) }}'
+          tagName: v0.1.0-draft.${{ github.run_number }}
+          releaseName: 'HA Menu Draft ${{ github.run_number }}'
           releaseBody: 'See the assets to download this version and install.'
           releaseDraft: true
           prerelease: false
