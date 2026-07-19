@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ha-menu</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body>
+    <div class="popover-wrapper">
+      <!-- Search Bar -->
+      <header class="header">
+        <div class="search-container">
+          <span class="search-icon">🔍</span>
+          <input id="entity-search" placeholder="Search entities..." autocomplete="off" />
+        </div>
+      </header>
+
+      <!-- Entity List -->
+      <main class="entity-list" id="entity-list">
+        <div class="loading-placeholder">
+          <span>Loading entities...</span>
+        </div>
+      </main>
+
+      <!-- Footer/Status -->
+      <footer class="footer">
+        <div class="connection-status">
+          <span class="status-indicator online"></span>
+          <span>Home Assistant Connected</span>
+        </div>
+        <div class="footer-actions" style="display: flex; gap: 8px; align-items: center;">
+          <button class="settings-button" id="settings-btn" title="Settings">⚙️</button>
+          <button class="quit-button" id="quit-btn" title="Quit ha-menu">⏻</button>
+        </div>
+      </footer>
+
+      <!-- Settings View (Slide-over Overlay) -->
+      <div class="settings-overlay" id="settings-overlay">
+        <header class="settings-header">
+          <button class="back-button" id="settings-back-btn">← Back</button>
+          <h2>Settings</h2>
+        </header>
+        <main class="settings-content">
+          <div class="form-group">
+            <label for="input-ha-url">Home Assistant URL</label>
+            <input type="url" id="input-ha-url" placeholder="http://192.168.1.100:8123" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="input-ha-token">Long-Lived Access Token</label>
+            <textarea id="input-ha-token" placeholder="Paste your Long-Lived Access Token..." rows="5"></textarea>
+          </div>
+          <div class="form-group" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <label for="input-ui-scale">UI Sizing Scale</label>
+              <span id="label-ui-scale-val" style="font-weight: 600; font-size: 0.85rem; color: var(--text-muted);">100%</span>
+            </div>
+            <input type="range" id="input-ui-scale" min="0.8" max="1.4" step="0.05" value="1.0" class="range-slider" style="width: 100%; margin-top: 6px;" />
+          </div>
+          <button class="save-button" id="settings-save-btn">Save & Connect</button>
+          <p class="settings-note">Generate a Long-Lived Access Token in your Home Assistant profile page (scroll to the very bottom).</p>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
