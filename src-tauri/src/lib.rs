@@ -553,9 +553,9 @@ fn now_ms() -> u64 {
 }
 
 #[tauri::command]
-fn exit_app(app_handle: tauri::AppHandle) {
+fn exit_app(_app_handle: tauri::AppHandle) {
     println!("Exiting ha-menu gracefully...");
-    app_handle.exit(0);
+    std::process::exit(0);
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
