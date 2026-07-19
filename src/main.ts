@@ -842,9 +842,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Graceful Quit App listener (Ticket 12)
   const quitBtn = document.getElementById("quit-btn");
-  quitBtn?.addEventListener("click", () => {
-    if (confirm("Are you sure you want to quit ha-menu?")) {
-      invoke("exit_app");
+  quitBtn?.addEventListener("click", async () => {
+    try {
+      await invoke("exit_app");
+    } catch (err) {
+      console.error("Failed to exit app via backend, forcing window close:", err);
+      window.close();
     }
   });
 });
