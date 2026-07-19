@@ -21,5 +21,13 @@ These are ideas that have been validated and accepted but are not yet scheduled 
 - UI updates to support collapsible accordion headers.
 - Drag-and-drop support in the UI would be ideal but complex; a simpler first step is a basic "Add to Group" context menu or settings editor.
 
+### 3. Secure Token Storage (Keychain / Credential Manager)
+**Description:** Migrate the storage of the Home Assistant Long-Lived Access Token (LLAT) from plaintext YAML to the operating system's native secure credential vault (macOS Keychain, Linux Secret Service, Windows Credential Manager).
+**Use Case:** Security-conscious users do not want highly privileged authentication tokens stored in plaintext files on their disk where malicious scripts or other applications could easily read them.
+**Technical Considerations:**
+- Implement the `keyring` crate in the Rust backend.
+- Ensure cross-platform compatibility (handling edge cases where Linux distros lack a default secret service).
+- Fallback gracefully or prompt the user if the native keyring is locked or unavailable.
+
 ---
 *Note: To move an item from the roadmap into active development, create a new Issue and map out the specific technical implementation steps.*
