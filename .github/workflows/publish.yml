@@ -8,6 +8,8 @@ on:
 
 jobs:
   build-and-publish:
+    permissions:
+      contents: write
     runs-on: macos-latest
     
     steps:
