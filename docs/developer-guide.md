@@ -9,6 +9,7 @@ To build HA Menu, you need the following installed on your machine:
 - [Node.js](https://nodejs.org/) (v18 or higher recommended)
 - [Rust](https://www.rust-lang.org/tools/install) (includes `cargo`)
 - [Xcode Command Line Tools](https://developer.apple.com/xcode/resources/) (for macOS compilation)
+- Linux Prerequisites: If building on Linux, you need `libwebkit2gtk-4.1-dev`, `build-essential`, `curl`, `wget`, `file`, `libxdo-dev`, `libssl-dev`, `libayatana-appindicator3-dev`, and `librsvg2-dev`.
 
 ## Setup
 
@@ -39,7 +40,7 @@ To build a production release of the application (e.g., the `.app` and `.dmg` fi
 npm run tauri build
 ```
 
-This will compile the frontend into the `dist/` folder and then compile the Rust backend. The final macOS `.dmg` and `.app` bundles will be located in:
+This will compile the frontend into the `dist/` folder and then compile the Rust backend. The final bundles (`.dmg` for macOS, `.deb`/`.AppImage` for Linux) will be located in:
 
 `src-tauri/target/release/bundle/`
 

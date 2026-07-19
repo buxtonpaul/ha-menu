@@ -1,6 +1,6 @@
 # HA Menu
 
-A menu-bar application for macOS to control your Home Assistant instance. 
+A menu-bar application for macOS and Linux to control your Home Assistant instance. 
 
 ## Features
 
@@ -9,19 +9,28 @@ A menu-bar application for macOS to control your Home Assistant instance.
 
 ## Installation
 
-1. Download the latest `.dmg` from the [Releases page](https://github.com/buxtonpaul/ha-menu/releases).
+Download the latest version for your operating system from the [Releases page](https://github.com/buxtonpaul/ha-menu/releases).
+
+### macOS
+1. Download the `.dmg` file.
 2. Open the `.dmg` and drag **HA Menu** into your Applications folder.
 
-### macOS Gatekeeper Workaround (Unidentified Developer)
-Currently, HA Menu is not signed with an Apple Developer certificate. When you first open the app, macOS may warn you that it is from an "Unidentified Developer" or that the app is damaged. 
-
+**Gatekeeper Workaround (Unidentified Developer)**  
+Currently, HA Menu is not signed with an Apple Developer certificate. macOS may warn you that it is from an "Unidentified Developer" or that the app is damaged. 
 To open it:
 1. Open your **Applications** folder in Finder.
 2. **Right-click (or Control-click)** on the HA Menu app.
-3. Select **Open** from the context menu.
-4. In the dialog that appears, click **Open**. 
+3. Select **Open** from the context menu and click **Open** in the dialog. 
+*(Alternatively, run `xattr -cr /Applications/HA\ Menu.app` in your terminal).*
 
-*(Alternatively, you can run `xattr -cr /Applications/HA\ Menu.app` in your terminal to clear the quarantine attribute).*
+### Linux
+Two formats are provided for Linux:
+- **`.deb` (Recommended for Debian/Ubuntu/Mint/Pop!_OS):** Install via `sudo apt install ./ha-menu*.deb`. This automatically installs the required system tray dependencies.
+- **`.AppImage` (Universal Fallback):** Download, make executable (`chmod +x ha-menu*.AppImage`), and run.
+
+**Important Note for GNOME Desktop Users (Ubuntu/Fedora):**  
+GNOME does not natively support system tray icons. To see the HA Menu icon on a default GNOME desktop, you **must** install the [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/) GNOME extension.  
+*(KDE Plasma, Linux Mint/Cinnamon, and XFCE support tray icons natively and require no extra setup).*
 
 ## Configuration
 
